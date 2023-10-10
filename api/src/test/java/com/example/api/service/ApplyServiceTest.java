@@ -54,6 +54,8 @@ class ApplyServiceTest {
 
         latch.await();
 
+        Thread.sleep(10000);  // 테스트 케이스 종료 전까지 consumer 애플리케이션의 쿠폰 발급을 모두 처리하기 위한 10초 스레드 슬립
+
         // then
         long count = couponRepository.count();
         assertThat(count).isEqualTo(100);

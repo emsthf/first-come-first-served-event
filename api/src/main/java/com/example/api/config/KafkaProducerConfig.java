@@ -20,8 +20,8 @@ public class KafkaProducerConfig {
         Map<String, Object> config = new HashMap<>();
 
         config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");  // 카프카 서버 주소
-        config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);  // 메시지 키에 대한 직렬화/역직렬화 방법
-        config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, LongSerializer.class);  // 메시지 벨류에 대한 직렬화/역직렬화 방법
+        config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);  // 메시지 키에 대한 직렬화 방법
+        config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, LongSerializer.class);  // 메시지 벨류에 대한 직렬화 방법
 
         return new DefaultKafkaProducerFactory<>(config);
     }
